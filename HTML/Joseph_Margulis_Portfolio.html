@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph's Portfolio</title>
+    <link rel="stylesheet" href="../CSS/Joseph_Margulis_Portfolio.css">
+    <script src="https://kit.fontawesome.com/69cb5f1e93.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    
+    <div class="container">
+        <nav>
+            <img src="../Images/Logo.jpg" class ="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#capstone">Capstone Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Pursuing a career in IT</p>
+            <h1>Hi, I'm <span>Joseph Margulis</span> <br> From Ontario, Canada</h1>
+        </div>
+    </div>
+</div>
+
+<script src="../Scripts/sideMenuScript.js"></script>
+
+<!-------About--------->
+<div id="about">
+    <div class="about-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+        
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="../Images/IMG_0440.jpg" alt="">
+            </div>
+            <div class="about-col-2">
+                <div class ="about-me">
+                    <h1 class = "sub-title-about">About Me</h1>
+                    <p>
+                        Driven by a deep passion for IT, I’ve developed a strong sense of discipline, responsibility, and determination through my education and professional experience. 
+                        This goal-oriented mindset continues to shape my approach to challenges in both personal and professional endeavors. My enthusiasm for building and 
+                        upgrading computers, troubleshooting hardware and software issues, and staying ahead of technological advancements fuels my ambition to excel in the 
+                        evolving field of technology.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('technical-skills')">Technical Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Professional Experience</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id ="education">
+                        <ul>
+                            <li><span> Seneca College</span><br>◆ Computer Engineering Technology / Advanced Diploma with Honours.</li>
+                            <li><span> McMaster University</span><br>◆ Software Engineering Technology / Bachelor of Technology. (Current)</li>
+                        </ul>
+                    </div>    
+
+                    <div class="tab-contents" id="technical-skills">
+                        <ul>
+                            <li><span> Programming</span><br>◆ Front-end and back-end programming.</li>
+                            <li><span> Electrical Engineering</span><br>◆ PCB and electrical design.</li>
+                            <li><span> Cybersecurity</span><br>◆ Maintaining and regulating computer security</li>
+                            <li><span> Computer Testing</span><br>◆ Computer hardware and software diagnostics.</li>
+                        </ul>
+                    </div>   
+
+                    <div class="tab-contents" id ="experience">
+                        <ul>
+                            <li><span> LCBO</span><br>◆ Customer Service Representative at LCBO for nearly 4 years</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../Scripts/aboutMeScript.js"></script>
+
+<!-------------Skills------------------------------>
+
+<div id="skills">
+    <div class="skills-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h1 class ="sub-title-skills">My Skills</h1>
+        <ul id="skill-list">
+
+            <li class = "section">
+                <input type="radio" name="skill-list" id = "first" checked >
+                <label for="first"> 
+                    <i class="fa-solid fa-code" id = "section-pic"></i>
+                    <p>Frontend and Backend Programming <i class="fa-solid fa-chevron-up" id = "section-arrow"></i> </p> 
+                </label> 
+                <div class = "content">
+                    <p>
+                        ◆ Strong understanding of object-oriented programming (OOP) concepts.
+                    </p>
+                    <p>
+                        ◆ Using classes to define specific attributes and behaviors.
+                    </p>
+                    <p>
+                        ◆ Leveraging multiple classes and inheriting properties across different class hierarchies.
+                    </p>
+                    <p>
+                        ◆ Dynamically allocation variable for targeted use cases.
+                    </p>
+                    <p>
+                        ◆ Efficiently manipulating data within classes during runtime.
+                    </p>
+                    <p>
+                        ◆ Designing Web Pages using CSS, HTML, Javascript as well as using servlets to handle and respond to client requests.
+                    </p>
+                    <p>
+                        Programming Languages: C, C++, C#, HTML, CSS, Python, SQL, Javascript
+                    </p>
+                </div>
+            </li>
+
+            <li class = "section">
+                <input type="radio" name="skill-list" id = "second" >
+                <label for="second">
+                    <i class="fa-brands fa-app-store" id = "section-pic"></i>
+                    <p>Applications and Services <i class="fa-solid fa-chevron-up" id = "section-arrow"></i></p>
+                </label>
+                <div class = "content">
+                    <p>
+                        ◆ Microsoft Word for drafting well-structured documents
+                    </p>
+                    <p>
+                        ◆ Microsoft PowerPoint for creating visually appealing presentations
+                    </p>
+                    <p>
+                        ◆ Microsoft Excel for data plotting and manipulation
+                    </p>
+                    <p>
+                        ◆ Adobe Photoshop for editing digital images
+                    </p>
+                    <p>
+                        ◆ Adobe Premiere Pro for video editing, splicing, and mixing
+                    </p>
+                    <p>
+                        ◆ PCB and electrical design software, particularly PADS PCB Design, for engineering custom PCBs.
+                    </p>
+                    <p>
+                        Applications: Microsoft Applications (Word, Powerpoint, Excel), Adobe Creative Suit (Photoshop, Premiere, Audition), Electrical/PCB Design (Pads, OrCAD)
+                    </p>
+                </div>
+            </li>
+
+            <li class = "section">
+                <input type="radio" name="skill-list" id = "third" >
+                <label for="third"> 
+                    <i class="fa-solid fa-computer" id = "section-pic"></i>
+                    <p>Computer Hardware and Software Systems <i class="fa-solid fa-chevron-up" id = "section-arrow"></i></p>
+                </label>
+                <div class = "content">
+                    <p>
+                        ◆  Assembling, diagnosing, and replacing computer hardware components.
+                    </p>
+                    <p>
+                        ◆ Troubleshooting software issues as well as implementing effective solutions. <br>(Eg: Boot errors, OS failures, Corrupt drivers, Malware)
+                    </p>
+                    <p>
+                        ◆ Techniques used to maintain an optimize computer performance. <br>(Eg:Thermal paste, Fan curves, Undervolting, Overclocking)
+                    </p>
+                    <p>
+                        ◆ Creating data redundancy solutions, including data backup and recovery methods
+                    </p>
+                    <p>
+                        Skills: Computer Assembly, Troubleshooting, Maintenance and Optimization, Installing and Configuring OS, Upgrading / Repairing Hardware, Performance Tuning, Data Backup and Recovery
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>   
+</div>
+
+<!-------------Capstone------------------------------>
+
+<div id="capstone">
+    <div class="capstone-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    
+    <div class="container">
+        
+        <h1 class = "sub-title-capstone">Capstone Project</h1>
+        <div class="cap-col">
+            <div class="cap-row-1">
+                <div class="slider">
+                    <div class="list">
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide1.PNG"/>
+                        </div>
+
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide2.PNG"/>
+                        </div>
+
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide3.PNG"/>
+                        </div>
+
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide4.PNG"/>
+                        </div>
+
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide5.PNG"/>
+                        </div>
+                            
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide6.PNG"/>
+                        </div>
+                            
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide7.PNG"/>
+                        </div>
+                            
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide8.PNG"/>
+                        </div>
+                            
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide9.PNG"/>
+                        </div>
+                            
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide10.PNG"/>
+                        </div>
+                            
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide11.PNG"/>
+                        </div>
+                        
+                        <div class="item">
+                            <img src="../Images/Secure Pi V4 Final/Slide12.PNG"/>
+                        </div>
+
+                    </div>
+
+                    <ul class="dots">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                    <div class="buttons">
+                        <button id ="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button id ="next"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cap-row-2">
+                <a href="../Files/SecurePi Gantt Chart.pdf" download class="button-row-2">Gantt Chart</a>
+                <a href="../Files/SecurePi Project Proposal.pdf" download class="button-row-2">Project Proposal</a>
+                <a href="../Files/SecurePi Final Report.docx.pdf" download class="button-row-2">Final Report</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../Scripts/sliderScript.js"></script>
+</div>
+
+<!-------------Contact------------------------------>
+
+<div id="contact">
+    <div class="contact-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title-Contact">Contact Me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>Josephmargulis@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>647-270-2934</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/josephmargulis/" target="_blank"><i class="fa-brands fa-linkedin"></i> <p>https://www.linkedin.com/in/josephmargulis/</p></a>
+                </div>
+                <a href="../Files/Joseph Margulis Resume.pdf" download class="download-resume">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="f6343329-8a47-4125-8147-e6734a6f9ad1">
+                    <input type="text" name="Name" placeholder="Your Full Name" class = "contact-input" required>
+                    <input type="email" name="email" placeholder="Your Email" class = "contact-input" required>
+                    <textarea name="message" rows="6" placeholder="Your Message" class = "contact-input"></textarea>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+
+            </div>
+            <script src="../Scripts/contactScript.js"></script>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Joseph's Portfolio. Made With <i class="fa-solid fa-heart"></i> by Joseph Margulis</p>
+    </div>
+</div>
+
+
+</body>
+</html>
