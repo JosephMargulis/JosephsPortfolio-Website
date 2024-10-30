@@ -656,7 +656,7 @@ nav ul li a:hover::after
 {
     text-decoration: none;
     margin-top: 30px;
-    padding: 14px 40px;
+    padding: 14px 70px;
     display: inline-block;
     background: #0099FF;
     font-size: 20px;
@@ -895,7 +895,17 @@ nav .fa-solid
      {
          width: 25px;
      }
- 
+
+    /*------------------contact---------------------*/
+     .contact-left p 
+     {
+       font-size: 14px;
+    }
+    
+    .social-icons a p 
+    {     
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 1115px)
@@ -1100,7 +1110,6 @@ nav .fa-solid
     .download-resume 
     {
         font-size: 16px;
-        padding: 10px 25px;
     }
 
     form input, form textarea 
