@@ -896,7 +896,17 @@ nav .fa-solid
      }
 
     /*------------------contact---------------------*/
-     .contact-left p 
+    .contact-left
+    {
+        flex-basis: 40%;
+    }    
+    
+    .contact-right
+    {
+        flex-basis: 55%;
+    }
+
+    .contact-left p 
      {
        font-size: 14px;
     }
@@ -904,6 +914,11 @@ nav .fa-solid
     .social-icons a p 
     {     
         font-size: 14px;
+    }
+
+    form input, form textarea 
+    {
+        font-size: 16px;
     }
 }
 
