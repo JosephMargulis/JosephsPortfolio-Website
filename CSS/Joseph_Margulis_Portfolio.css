@@ -1202,6 +1202,10 @@ nav .fa-solid
     }
     
     /*------------------Skills---------------------*/
+    #skills .container
+    {
+        padding: 10px 10% 15%;
+    }
     .sub-title-skills
     {
         font-size: 30px;
