@@ -594,7 +594,6 @@ nav ul li a:hover::after
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 20px;
-    margin-top: 50px;
 }
 
 .contact-left, .contact-right
