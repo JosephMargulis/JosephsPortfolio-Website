@@ -250,7 +250,6 @@ nav ul li a:hover::after
 #skills
 {
     height: auto;
-    
 }
 
 .skills-divider {
@@ -311,7 +310,7 @@ nav ul li a:hover::after
     overflow: hidden;
 }
 
-#skill-list input[type="radio"] 
+#skill-list input[type="checkbox"] 
 {
     display: none;
 }
@@ -807,12 +806,15 @@ nav .fa-solid
 @media only screen and (max-width: 1300px)
 {
     /*------------------Skills---------------------*/
+    #skills .container
+    {
+        padding: 10px 10% 15%;
+        
+    }
 
     #skill-list
     {
         flex-direction: column;
-        max-height: 800px;
-        min-height: 800px;
         justify-content:unset;
     }
 
@@ -859,13 +861,13 @@ nav .fa-solid
         font-size: 18px;
     }
 
-    #skill-list input[type="radio"]:checked + label + .content
+    #skill-list input[type="checkbox"]:checked + label + .content
     {
         max-height: 400px;
         
     }
 
-    #skill-list input[type="radio"]:checked + label #section-arrow 
+    #skill-list input[type="checkbox"]:checked + label #section-arrow 
     {
         transform: rotate(180deg);
     }
@@ -1227,8 +1229,9 @@ nav .fa-solid
     /*------------------Skills---------------------*/
     #skills .container
     {
-        padding: 10px 10% 15%;
+        padding: 10px 10% 20%;
     }
+
     .sub-title-skills
     {
         font-size: 30px;
@@ -1352,13 +1355,6 @@ nav .fa-solid
         width: 275px;
         height: 225px;
     }
-
-     /*------------------Skills---------------------*/
-
-     #skills .container
-     {
-        padding: 10px 10% 20%;
-     }
 
      /*------------------Contact Me---------------------*/
 
