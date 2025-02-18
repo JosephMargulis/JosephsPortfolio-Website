@@ -738,19 +738,11 @@ form input, form textarea
     background-color: #262626;
     font-weight: 300;
     margin-top: 20px;
-    position: relative;
-    overflow-y: hidden;
 }
 
 .copyright i 
 {
     color: #ff004f;
-}
-
-.extra-space 
-{
-    width: 100%;
-    background-color: #262626; 
 }
 /*------------------------CSS For Small Screen --------------------------*/
 nav .fa-solid
