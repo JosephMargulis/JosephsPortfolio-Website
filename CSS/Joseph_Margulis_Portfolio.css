@@ -9,7 +9,7 @@
 html,body
 {
     scroll-behavior: smooth;
-    background: #080808;
+    background: #262626;
     color: #ffffff;
     overscroll-behavior: none;
 }
@@ -19,6 +19,7 @@ html,body
     width: 100%;
     min-height: 100vh;
     height: auto;
+    background: #080808;
     background-image: url(../Images/IMG_0439-transformed.png);
     background-size: contain;
     background-position: right;
@@ -247,6 +248,7 @@ nav ul li a:hover::after
 #skills
 {
     height: auto;
+    background: #080808;
 }
 
 .skills-divider {
@@ -555,11 +557,10 @@ nav ul li a:hover::after
     transition: transform 0.1s;
     border: 3px solid #000000
 }
-
 /*---------------------Contact------------------*/
 #contact
 {
-    background-color: #080808;
+    background: #080808;
 }
 
 .contact-divider {
@@ -727,6 +728,7 @@ form input, form textarea
 }
 
 /*---------------------Copyright------------------*/
+
 .copyright
 {
     width: 100%;
@@ -741,6 +743,7 @@ form input, form textarea
 {
     color: #ff004f;
 }
+
 /*------------------------CSS For Small Screen --------------------------*/
 nav .fa-solid
 {
