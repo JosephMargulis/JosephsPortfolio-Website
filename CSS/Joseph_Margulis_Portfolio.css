@@ -6,15 +6,12 @@
     box-sizing: border-box;
 }
 
-html
+html,body
 {
     scroll-behavior: smooth;
-}
-
-body 
-{
     background: #080808;
     color: #ffffff;
+    overscroll-behavior: none;
 }
 
 #header
