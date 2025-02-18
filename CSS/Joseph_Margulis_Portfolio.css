@@ -747,6 +747,11 @@ form input, form textarea
     color: #ff004f;
 }
 
+.extra-space 
+{
+    width: 100%;
+    background-color: #262626; 
+}
 /*------------------------CSS For Small Screen --------------------------*/
 nav .fa-solid
 {
