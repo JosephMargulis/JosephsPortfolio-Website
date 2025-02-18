@@ -738,6 +738,8 @@ form input, form textarea
     background-color: #262626;
     font-weight: 300;
     margin-top: 20px;
+    position: relative;
+    overflow-y: hidden;
 }
 
 .copyright i 
