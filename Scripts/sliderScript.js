@@ -30,7 +30,7 @@ function moveSlide(direction) {
 
 function reloadSlider() {
     let checkLeft = items[active].offsetLeft;
-    list.style.transition = "transform 0.3s ease-in-out"; 
+    list.style.transition = "transform 0.5s ease-in-out"; 
     list.style.transform = `translateX(-${checkLeft}px)`;
 
     let lastActiveDot = document.querySelector(".slider .dots li.active");
