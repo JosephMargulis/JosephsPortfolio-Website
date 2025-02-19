@@ -10,16 +10,29 @@ let touchStartX = 0;
 let touchEndX = 0;
 let isSwiping = false;
 const SWIPE_THRESHOLD = 15;
+let autoSlideTimer;
+
+function startAutoSlide() {
+    autoSlideTimer = setInterval(() => {
+        moveSlide("next");
+    }, 5000);
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideTimer);
+}
 
 next.onclick = function () {
+    stopAutoSlide();
     moveSlide("next");
+    startAutoSlide();
 };
 
 prev.onclick = function () {
+    stopAutoSlide();
     moveSlide("prev");
+    startAutoSlide();
 };
-
-let refreshSlider = setInterval(() => { next.click(); }, 5000);
 
 function moveSlide(direction) {
     if (direction === "next") {
@@ -41,26 +54,26 @@ function reloadSlider() {
     if (lastActiveDot) lastActiveDot.classList.remove("active");
     
     dots[active].classList.add("active");
-
-    clearInterval(refreshSlider);
-    refreshSlider = setInterval(() => { next.click(); }, 5000);
 }
 
 dots.forEach((li, key) => {
     li.addEventListener("click", function () {
+        stopAutoSlide();
         active = key;
         reloadSlider();
+        startAutoSlide();
     });
 });
 
 list.addEventListener("touchstart", (e) => {
+    stopAutoSlide();
     touchStartX = e.touches[0].clientX;
     isSwiping = true;
 }, { passive: true });
 
 list.addEventListener("touchmove", (e) => {
     if (!isSwiping) return;
-    e.preventDefault(); // Prevent browser from interfering with touch gestures
+    e.preventDefault();
     touchEndX = e.touches[0].clientX;
 }, { passive: false });
 
@@ -73,8 +86,11 @@ list.addEventListener("touchend", () => {
     } else if (swipeDistance < -SWIPE_THRESHOLD) {
         moveSlide("prev");
     }
-    
+
     isSwiping = false;
     touchStartX = 0;
     touchEndX = 0;
+    startAutoSlide();
 });
+
+startAutoSlide();
