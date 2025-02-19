@@ -413,7 +413,9 @@ nav ul li a:hover::after
     position: relative;
     border-radius: 50px;
     overflow: hidden;
-    border: solid 5px #0099FF;  
+    border: solid 5px #0099FF;
+    touch-action: pan-x;
+    transition: transform 0.5s ease-in-out;  
 }
 
 .list 
@@ -1080,7 +1082,7 @@ nav .fa-solid
     .cap-row-2
     {
         width: 60%;
-        flex-direction: column;
+        flex-direction: column;  
         margin-bottom: 40px;
     }
 
@@ -1281,12 +1283,7 @@ nav .fa-solid
 
     .buttons 
     {
-        width: 100%;
-    }
-
-    .buttons button
-    {
-       font-size: 20px;
+        display: none;
     }
 
     .dots li
