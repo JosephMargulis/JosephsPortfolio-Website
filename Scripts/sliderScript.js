@@ -55,7 +55,7 @@ dots.forEach((li, key) => {
 // **Touch Swipe for Mobile**
 let touchStartX = 0;
 let touchEndX = 0;
-let swipeThreshold = 20; // **Smaller stroke for more sensitivity**
+let swipeThreshold = 5; // **Smaller stroke for more sensitivity**
 
 list.addEventListener("touchstart", (e) => {
     touchStartX = e.touches[0].clientX;
