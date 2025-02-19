@@ -6,10 +6,10 @@ let next = document.getElementById('next');
 
 let active = 0;
 let lengthItems = items.length - 1;
-let isSwiping = false;
 let touchStartX = 0;
 let touchEndX = 0;
-const SWIPE_THRESHOLD = 20;
+let isSwiping = false;
+const SWIPE_THRESHOLD = 15;
 
 next.onclick = function () {
     moveSlide("next");
@@ -32,8 +32,10 @@ function moveSlide(direction) {
 
 function reloadSlider() {
     let checkLeft = items[active].offsetLeft;
-    list.style.transition = "transform 0.3s ease-in-out";
-    list.style.transform = `translateX(-${checkLeft}px)`;
+    requestAnimationFrame(() => {
+        list.style.transition = "transform 0.3s ease-in-out";
+        list.style.transform = `translateX(-${checkLeft}px)`;
+    });
 
     let lastActiveDot = document.querySelector(".slider .dots li.active");
     if (lastActiveDot) lastActiveDot.classList.remove("active");
@@ -58,8 +60,9 @@ list.addEventListener("touchstart", (e) => {
 
 list.addEventListener("touchmove", (e) => {
     if (!isSwiping) return;
+    e.preventDefault(); // Prevent browser from interfering with touch gestures
     touchEndX = e.touches[0].clientX;
-}, { passive: true });
+}, { passive: false });
 
 list.addEventListener("touchend", () => {
     if (!isSwiping) return;
@@ -70,5 +73,8 @@ list.addEventListener("touchend", () => {
     } else if (swipeDistance < -SWIPE_THRESHOLD) {
         moveSlide("prev");
     }
+    
     isSwiping = false;
+    touchStartX = 0;
+    touchEndX = 0;
 });
