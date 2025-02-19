@@ -9,10 +9,11 @@ let lengthItems = items.length - 1;
 let touchStartX = 0;
 let touchEndX = 0;
 let isSwiping = false;
-const SWIPE_THRESHOLD = 15;
+const SWIPE_THRESHOLD = 10;
 let autoSlideTimer;
 
 function startAutoSlide() {
+    stopAutoSlide();
     autoSlideTimer = setInterval(() => {
         moveSlide("next");
     }, 5000);
@@ -21,18 +22,6 @@ function startAutoSlide() {
 function stopAutoSlide() {
     clearInterval(autoSlideTimer);
 }
-
-next.onclick = function () {
-    stopAutoSlide();
-    moveSlide("next");
-    startAutoSlide();
-};
-
-prev.onclick = function () {
-    stopAutoSlide();
-    moveSlide("prev");
-    startAutoSlide();
-};
 
 function moveSlide(direction) {
     if (direction === "next") {
@@ -45,16 +34,34 @@ function moveSlide(direction) {
 
 function reloadSlider() {
     let checkLeft = items[active].offsetLeft;
-    requestAnimationFrame(() => {
-        list.style.transition = "transform 0.3s ease-in-out";
-        list.style.transform = `translateX(-${checkLeft}px)`;
-    });
+    list.style.transition = "transform 0.3s ease-in-out";
+    list.style.transform = `translateX(-${checkLeft}px)`;
 
-    let lastActiveDot = document.querySelector(".slider .dots li.active");
-    if (lastActiveDot) lastActiveDot.classList.remove("active");
-    
+    dots.forEach(dot => dot.classList.remove("active"));
     dots[active].classList.add("active");
+
+    setTimeout(() => {
+        isSwiping = false; 
+    }, 300);
 }
+
+next.onclick = function () {
+    if (!isSwiping) {
+        isSwiping = true;
+        stopAutoSlide();
+        moveSlide("next");
+        startAutoSlide();
+    }
+};
+
+prev.onclick = function () {
+    if (!isSwiping) {
+        isSwiping = true;
+        stopAutoSlide();
+        moveSlide("prev");
+        startAutoSlide();
+    }
+};
 
 dots.forEach((li, key) => {
     li.addEventListener("click", function () {
@@ -87,10 +94,10 @@ list.addEventListener("touchend", () => {
         moveSlide("prev");
     }
 
-    isSwiping = false;
-    touchStartX = 0;
-    touchEndX = 0;
-    startAutoSlide();
+    setTimeout(() => {
+        isSwiping = false; 
+        startAutoSlide();
+    }, 300);
 });
 
 startAutoSlide();
