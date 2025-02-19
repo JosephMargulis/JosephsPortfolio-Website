@@ -413,7 +413,7 @@ nav ul li a:hover::after
     position: relative;
     border-radius: 50px;
     overflow: hidden;
-    border: solid 5px #0099FF;
+    border: solid 5px #ff004f;
     touch-action: pan-x;
     transition: transform 0.5s ease-in-out;  
 }
