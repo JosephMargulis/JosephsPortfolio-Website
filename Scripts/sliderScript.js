@@ -7,6 +7,9 @@ let next = document.getElementById('next');
 let active = 0;
 let lengthItems = items.length - 1;
 let isSwiping = false;
+let touchStartX = 0;
+let touchEndX = 0;
+const SWIPE_THRESHOLD = 20;
 
 next.onclick = function () {
     moveSlide("next");
@@ -27,10 +30,9 @@ function moveSlide(direction) {
     reloadSlider();
 }
 
-
 function reloadSlider() {
     let checkLeft = items[active].offsetLeft;
-    list.style.transition = "transform 0.5s ease-in-out"; 
+    list.style.transition = "transform 0.3s ease-in-out";
     list.style.transform = `translateX(-${checkLeft}px)`;
 
     let lastActiveDot = document.querySelector(".slider .dots li.active");
@@ -42,18 +44,12 @@ function reloadSlider() {
     refreshSlider = setInterval(() => { next.click(); }, 5000);
 }
 
-
 dots.forEach((li, key) => {
     li.addEventListener("click", function () {
         active = key;
         reloadSlider();
     });
 });
-
-
-let touchStartX = 0;
-let touchEndX = 0;
-const SWIPE_THRESHOLD = 5; 
 
 list.addEventListener("touchstart", (e) => {
     touchStartX = e.touches[0].clientX;
@@ -70,9 +66,9 @@ list.addEventListener("touchend", () => {
     let swipeDistance = touchStartX - touchEndX;
 
     if (swipeDistance > SWIPE_THRESHOLD) {
-        moveSlide("next"); 
+        moveSlide("next");
     } else if (swipeDistance < -SWIPE_THRESHOLD) {
-        moveSlide("prev"); 
+        moveSlide("prev");
     }
     isSwiping = false;
 });
