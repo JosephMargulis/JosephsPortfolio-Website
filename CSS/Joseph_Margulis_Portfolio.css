@@ -1298,6 +1298,10 @@ nav .fa-solid
          width: 20px;
      }
 
+     .dots li:hover
+    {
+        scale: 1;
+    }
 
     /*------------------Contact Me---------------------*/
 
