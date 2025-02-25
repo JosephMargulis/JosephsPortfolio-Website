@@ -9,9 +9,11 @@ let lengthItems = items.length - 1;
 let touchStartX = 0;
 let touchEndX = 0;
 let isSwiping = false;
-const SWIPE_THRESHOLD = 10;
+const SWIPE_THRESHOLD = 50;
 let autoSlideTimer;
+let startX, moveX, diffX;
 
+// Start Auto Slide
 function startAutoSlide() {
     stopAutoSlide();
     autoSlideTimer = setInterval(() => {
@@ -19,10 +21,12 @@ function startAutoSlide() {
     }, 5000);
 }
 
+// Stop Auto Slide
 function stopAutoSlide() {
     clearInterval(autoSlideTimer);
 }
 
+// Move Slide Function
 function moveSlide(direction) {
     if (direction === "next") {
         active = (active + 1 > lengthItems) ? 0 : active + 1;
@@ -32,6 +36,7 @@ function moveSlide(direction) {
     reloadSlider();
 }
 
+// Reload Slider with Smooth Transition
 function reloadSlider() {
     let checkLeft = items[active].offsetLeft;
     list.style.transition = "transform 0.3s ease-in-out";
@@ -45,6 +50,7 @@ function reloadSlider() {
     }, 300);
 }
 
+// Button Controls
 next.onclick = function () {
     if (!isSwiping) {
         isSwiping = true;
@@ -63,6 +69,7 @@ prev.onclick = function () {
     }
 };
 
+// Dot Click Controls
 dots.forEach((li, key) => {
     li.addEventListener("click", function () {
         stopAutoSlide();
@@ -72,30 +79,36 @@ dots.forEach((li, key) => {
     });
 });
 
+// Touch Events for Mobile Swipe
 list.addEventListener("touchstart", (e) => {
     stopAutoSlide();
-    touchStartX = e.touches[0].clientX;
+    startX = e.touches[0].clientX;
     isSwiping = true;
+    list.style.transition = "none"; // Disable animation on touch start
 }, { passive: true });
 
 list.addEventListener("touchmove", (e) => {
     if (!isSwiping) return;
-    e.preventDefault();
-    touchEndX = e.touches[0].clientX;
-}, { passive: false });
+    moveX = e.touches[0].clientX;
+    diffX = moveX - startX;
+
+    // Apply real-time movement effect
+    list.style.transform = `translateX(calc(-${items[active].offsetLeft}px + ${diffX}px))`;
+}, { passive: true });
 
 list.addEventListener("touchend", () => {
     if (!isSwiping) return;
-    let swipeDistance = touchStartX - touchEndX;
 
-    if (swipeDistance > SWIPE_THRESHOLD) {
+    if (diffX < -SWIPE_THRESHOLD) {
         moveSlide("next");
-    } else if (swipeDistance < -SWIPE_THRESHOLD) {
+    } else if (diffX > SWIPE_THRESHOLD) {
         moveSlide("prev");
+    } else {
+        reloadSlider();
     }
 
     setTimeout(() => {
-        isSwiping = false; 
+        isSwiping = false;
         startAutoSlide();
     }, 300);
 });
