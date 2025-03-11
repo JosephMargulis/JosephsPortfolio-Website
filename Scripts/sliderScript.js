@@ -6,12 +6,10 @@ let next = document.getElementById('next');
 
 let active = 0;
 let lengthItems = items.length - 1;
-let touchStartX = 0;
-let touchEndX = 0;
-let isSwiping = false;
-const SWIPE_THRESHOLD = 50;
 let autoSlideTimer;
-let startX, moveX, diffX;
+const SWIPE_THRESHOLD = 50;
+let startX = 0, diffX = 0;
+let isSwiping = false;
 
 // Start Auto Slide
 function startAutoSlide() {
@@ -44,29 +42,19 @@ function reloadSlider() {
 
     dots.forEach(dot => dot.classList.remove("active"));
     dots[active].classList.add("active");
-
-    setTimeout(() => {
-        isSwiping = false; 
-    }, 300);
 }
 
 // Button Controls
 next.onclick = function () {
-    if (!isSwiping) {
-        isSwiping = true;
-        stopAutoSlide();
-        moveSlide("next");
-        startAutoSlide();
-    }
+    stopAutoSlide();
+    moveSlide("next");
+    startAutoSlide();
 };
 
 prev.onclick = function () {
-    if (!isSwiping) {
-        isSwiping = true;
-        stopAutoSlide();
-        moveSlide("prev");
-        startAutoSlide();
-    }
+    stopAutoSlide();
+    moveSlide("prev");
+    startAutoSlide();
 };
 
 // Dot Click Controls
@@ -83,13 +71,14 @@ dots.forEach((li, key) => {
 list.addEventListener("touchstart", (e) => {
     stopAutoSlide();
     startX = e.touches[0].clientX;
+    diffX = 0; // Reset diffX on new touch
     isSwiping = true;
     list.style.transition = "none"; // Disable animation on touch start
 }, { passive: true });
 
 list.addEventListener("touchmove", (e) => {
     if (!isSwiping) return;
-    moveX = e.touches[0].clientX;
+    let moveX = e.touches[0].clientX;
     diffX = moveX - startX;
 
     // Apply real-time movement effect
@@ -107,10 +96,14 @@ list.addEventListener("touchend", () => {
         reloadSlider();
     }
 
+    // Reset swipe variables
+    diffX = 0;
+    isSwiping = false;
+
     setTimeout(() => {
-        isSwiping = false;
         startAutoSlide();
     }, 300);
 });
 
+// Start auto slide when the script loads
 startAutoSlide();
