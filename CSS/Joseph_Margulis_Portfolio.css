@@ -357,6 +357,20 @@ nav ul li a:hover::after
     background-color: #262626;
 }
 
+#capstone .swiper { width: 100%; height: auto; }
+
+#capstone .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* preserves slide layout */
+}
+
+#capstone .swiper .swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+}
+
 .capstone-divider 
 {
     position: relative;
@@ -418,107 +432,50 @@ nav ul li a:hover::after
     transition: transform 0.5s ease-in-out;  
 }
 
-.list 
-{
-    position: relative;
-    display: flex;
-    transition: 1s; 
-    width: 100%;
-    
+/* Bigger dots */
+#capstone .slider .swiper-pagination-bullet {
+  width: 16px !important;
+  height: 16px !important;
+  background: #fff !important;
+  opacity: .6 !important;
+  transition: all 0.4s ease; /* Smooth animation */
 }
 
-.list .item 
-{
-    flex: 0 0 100%;
-    box-sizing: border-box;
-}
-
-.slider img 
-{
-    width: 100%;
-    display: block;
-
+#capstone .slider .swiper-pagination-bullet-active {
+  background: #0099FF !important;
+  width: 30px !important;          /* “pill” look for active */
+  border-radius: 999px !important;
+  opacity: 1 !important;
 }
 
 
-.buttons
-{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+/* Style navigation arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  background: transparent;
+  opacity: 0.6;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
 }
 
-.buttons button
-{
-    background: transparent;
-    opacity: 60%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    font-weight: bold;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s; 
-    touch-action: manipulation;
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.2);
+  opacity: 1;
 }
 
-.buttons button:hover 
-{
-    transform: scale(1.2); /* Use transform for scaling */
-    opacity: 100%;
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  display: none; /* hide default Swiper arrows */
 }
 
-.buttons button:active 
-{
-    transform: scale(2); /* Use transform for scaling */
-    opacity: 100%;
-}
-
-
-.dots
-{
-    position: absolute;
-    bottom: 10px;
-    color: #fff;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.dots li
-{
-    list-style: none;
-    width: 15px;
-    height: 15px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 20px;
-    transition: 1s;
-    
-}
-
-.dots li.active
-{
-    width: 30px;
-    background-color: #0099FF;
-}
-
-.dots li:hover
-{
-    scale: 1.5;
-}
 
 .cap-row-2
 {
@@ -1086,6 +1043,11 @@ nav .fa-solid
         margin-bottom: 40px;
     }
 
+    .swiper-button-prev,
+    .swiper-button-next {
+    display: none !important;
+    }
+
     .button-row-2
     {
         font-size: 14px;
@@ -1281,27 +1243,15 @@ nav .fa-solid
         font-size: 30px;
     }
 
-    .buttons 
-    {
-        display: none;
+    #capstone .slider .swiper-pagination-bullet {
+        width: 5px !important;
+        height: 5px !important;
     }
 
-    .dots li
-     {
-        width: 10px;
-        height: 10px;
-        margin: 0 5px;   
-     }
- 
-     .dots li.active
-     {
-         width: 20px;
-     }
-
-     .dots li:hover
-    {
-        scale: 1;
+    #capstone .slider .swiper-pagination-bullet-active {
+        width: 10px  !important;/* smaller “pill” look on mobile */
     }
+
 
     /*------------------Contact Me---------------------*/
 
