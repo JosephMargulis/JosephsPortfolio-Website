@@ -51,7 +51,7 @@ nav
 {
     display: flex;
     position: relative;
-    height: 120px;
+    height: 80px;
     width: 300px;
 }
 
@@ -1343,4 +1343,5 @@ nav .fa-solid
         font-size: 12px;
     }
 }
+
 
