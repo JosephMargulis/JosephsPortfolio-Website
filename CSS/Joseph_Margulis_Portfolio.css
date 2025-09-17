@@ -49,6 +49,7 @@ nav
 
 .logo
 {
+    left: 5rem;
     display: flex;
     position: relative;
     height: 80px;
@@ -1343,5 +1344,6 @@ nav .fa-solid
         font-size: 12px;
     }
 }
+
 
 
