@@ -45,6 +45,7 @@ nav
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .logo
@@ -1344,6 +1345,7 @@ nav .fa-solid
         font-size: 12px;
     }
 }
+
 
 
 
