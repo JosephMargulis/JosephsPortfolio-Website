@@ -35,11 +35,18 @@ html,body
 
 nav
 {
+    padding: 1% 0 1%;
+    width: 100%;
+    right: 0; top: 0;
+    z-index: 1000;
+    position: fixed;
+    background: rgba(8,8,8,.85); /* subtle translucent bar */
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 .logo
 {
     display: flex;
@@ -914,6 +921,7 @@ nav .fa-solid
         display: block;
         font-size: 25px;
         transition: .15s;
+        padding: 0 5% 0 0;
     }
 
     nav .fa-solid:active
@@ -1335,3 +1343,4 @@ nav .fa-solid
         font-size: 12px;
     }
 }
+
