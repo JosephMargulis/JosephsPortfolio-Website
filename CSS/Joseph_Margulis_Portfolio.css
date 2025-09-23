@@ -966,7 +966,13 @@ nav .fa-solid
     {
         scale: 1.3;
     }
-
+    
+    .logo
+    {
+        left: 3rem;
+        height: 70px;
+        width: 230px;
+    }
     /*------------------About Me---------------------*/
     .about-divider 
     {
@@ -1151,7 +1157,8 @@ nav .fa-solid
 
    .logo
     {
-        height: 80px;
+        left: 1.5rem;
+        height: 50px;
         width: 180px;
     }
    .header-text
@@ -1345,6 +1352,7 @@ nav .fa-solid
         font-size: 12px;
     }
 }
+
 
 
 
